@@ -38,14 +38,14 @@ export default function Home() {
 			))}
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
 			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center">
-				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider">
+				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider cursor-default">
 					Le Café du
 					<br />
 					Chateau
 				</h1>
 			</div>
 			<div className="bottom-0 z-30 absolute flex flex-col items-center gap-6 mb-8 w-full text-primary text-center">
-				<div className="text-[clamp(1rem,5vw,1.3rem)] leading-7">
+				<div className="text-[clamp(1rem,5vw,1.3rem)] leading-7 cursor-default">
 					Plage du Château
 					<br />
 					44210 Pornic
