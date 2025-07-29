@@ -1,5 +1,5 @@
 import { Lato } from "next/font/google";
-import "./globals.scss";
+import "./globals.css";
 import NavBar from "@/components/NavBar";
 
 const lato = Lato({

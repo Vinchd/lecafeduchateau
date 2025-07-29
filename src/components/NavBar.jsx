@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import styles from "./NavBar.module.scss";
 
 export default function NavBar() {
 	const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
@@ -17,56 +16,54 @@ export default function NavBar() {
 		const body = document.body;
 		if (!body) return;
 
-		body.classList.toggle(styles.navIsVisible, navMenuIsOpen);
+		body.classList.toggle("navIsVisible", navMenuIsOpen);
 
 		return () => {
-			body.classList.remove(styles.navIsVisible);
+			body.classList.remove("navIsVisible");
 		};
 	}, [navMenuIsOpen]);
 
 	const isActive = (path) => pathname === path;
 
 	return (
-		<nav className={styles.nav}>
-			<div className={styles.navBar}>
+		<nav className="nav">
+			<div className="navBar">
 				{/* Nav toggle */}
 				<button
 					type="button"
-					className={clsx(styles.navToggle, { [styles.active]: navMenuIsOpen })}
+					className={clsx("navToggle", { active: navMenuIsOpen })}
 					onClick={toggleNav}
 					aria-label="Toggle navigation"
 				>
-					<span className={styles.navNavicon}>
-						<span className={styles.navNaviconLine}></span>
-						<span className={styles.navNaviconLine}></span>
-						<span className={styles.navNaviconLine}></span>
+					<span className="navNavicon">
+						<span className="navNaviconLine first"></span>
+						<span className="navNaviconLine second"></span>
+						<span className="navNaviconLine third"></span>
 					</span>
 				</button>
 			</div>
 
 			{/* Menu background */}
 			<div
-				className={clsx(styles.navMenuBg, {
-					[styles.active]: navMenuIsOpen,
+				className={clsx("navMenuBg", {
+					active: navMenuIsOpen,
 				})}
 			></div>
 
 			{/* Menu */}
 			<div
-				className={clsx(styles.navMenu, {
-					[styles.active]: navMenuIsOpen,
+				className={clsx("navMenu", {
+					active: navMenuIsOpen,
 				})}
 			>
-				<div className={styles.navMenuContainer}>
+				<div className="navMenuContainer">
 					<ul>
-						<li className={clsx({ [styles.active]: isActive("/") })}>
+						<li className={clsx({ active: isActive("/") })}>
 							<Link href="/" onClick={() => setNavMenuIsOpen(false)}>
 								Accueil
 							</Link>
 						</li>
-						<li
-							className={clsx({ [styles.active]: isActive("/informations") })}
-						>
+						<li className={clsx({ active: isActive("/informations") })}>
 							<Link
 								href="/informations"
 								onClick={() => setNavMenuIsOpen(false)}
