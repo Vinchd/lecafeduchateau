@@ -38,24 +38,29 @@ export default function Home() {
 			))}
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
 			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center">
-				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider">
+				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider cursor-default">
 					Le Café du
 					<br />
 					Chateau
 				</h1>
 			</div>
 			<div className="bottom-0 z-30 absolute flex flex-col items-center gap-6 mb-8 w-full text-primary text-center">
-				<div className="text-[clamp(1rem,5vw,1.3rem)] leading-7">
+				<a
+					href="https://maps.app.goo.gl/9B39j1e3WBVcqeet5"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-[clamp(1rem,5vw,1.3rem)] hover:text-secondary leading-7 hover:scale-104 transition duration-300"
+				>
 					Plage du Château
 					<br />
 					44210 Pornic
-				</div>
+				</a>
 				<div className="flex gap-1">
 					<a
 						href="https://www.facebook.com/profile.php?id=61578382830492"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex justify-center items-center hover:text-secondary transition duration-300"
+						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
 						<FaFacebookF className="w-9 h-9" />
 					</a>
@@ -63,7 +68,7 @@ export default function Home() {
 						href="https://www.instagram.com/cafeduchateaupnc"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex justify-center items-center hover:text-secondary transition duration-300"
+						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
 						<FaInstagram className="w-10 h-10" />
 					</a>
