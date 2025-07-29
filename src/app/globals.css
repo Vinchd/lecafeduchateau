@@ -93,6 +93,9 @@
 	transition: transform 0.8s cubic-bezier(0.77, 0.2, 0.05, 1);
 	position: fixed;
 	z-index: 99998;
+	box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.75) inset;
+	-webkit-box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.75) inset;
+	-moz-box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.75) inset;
 }
 
 .navMenu {
