@@ -1,41 +1,10 @@
-"use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-
-const images = [
-	"/plat-terrine.jpg",
-	"/plat-straciatella.jpg",
-	"/plat-ceviche-thon.jpg",
-	"/plat-poisson.jpg",
-	"/plat-onglet-boeuf.jpg",
-];
+import FullScreenImageFader from "@/components/FullScreenImageFader";
 
 export default function Home() {
-	const [current, setCurrent] = useState(0);
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrent((prev) => (prev + 1) % images.length);
-		}, 6000);
-		return () => clearInterval(interval);
-	}, []);
-
 	return (
 		<main className="relative h-[100dvh] min-h-screen">
-			{images.map((src, index) => (
-				<Image
-					key={src}
-					src={src}
-					alt={`Background ${index}`}
-					sizes="(max-width: 500px) 100vw, (max-width: 800px) 100vw, (max-width: 1080px) 100vw, 100vw"
-					fill={true}
-					priority={index === 0}
-					className={`absolute object-cover top-0 left-0 w-full h-full transition-opacity duration-3000 ease-in ${
-						index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-					}`}
-				/>
-			))}
+			<FullScreenImageFader />
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
 			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center">
 				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider cursor-default">
