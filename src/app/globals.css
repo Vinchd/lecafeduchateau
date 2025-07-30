@@ -6,6 +6,29 @@
 	--font-lato: var(--font-lato);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+scrollbar-hide {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.section-box-shadowr {
+	z-index: 1;
+	box-shadow: -20px 0px 40px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -20px 0px 40px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -20px 0px 40px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (width < 64rem) {
+	.section-box-shadowr {
+		box-shadow: 0px -20px 40px 0px rgba(0, 0, 0, 0.75);
+		-webkit-box-shadow: 0px -20px 40px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px -20px 40px 0px rgba(0, 0, 0, 0.75);
+	}
+}
+
 /* ----- NAV ----- */
 .navNaviconLine {
 	background-color: currentColor;
