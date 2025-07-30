@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Lato } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
 			<body className={`${lato.variable} ${lato.className} antialiased h-dvh`}>
 				<NavBar />
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	);
