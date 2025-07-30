@@ -19,14 +19,30 @@
 		}
 	}
 
+	@keyframes fade-in-left {
+		0% {
+			opacity: 0;
+			transform: translateX(30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
 	.animate-fade-in-up {
 		animation: fade-in-up 0.8s ease-out both;
-		animation-delay: 0.7s;
+		animation-delay: 0.5s;
+	}
+
+	.animate-fade-in-left {
+		animation: fade-in-left 0.8s ease-out both;
+		animation-delay: 0.5s;
 	}
 
 	.animate-fade-in-up-slow {
 		animation: fade-in-up 1s ease-out both;
-		animation-delay: 1s;
+		animation-delay: 0.8s;
 	}
 }
 
