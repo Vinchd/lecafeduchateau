@@ -15,8 +15,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="fr">
-			<body className={`${lato.variable} ${lato.className} antialiased`}>
+		<html lang="fr" className="h-dvh">
+			<body className={`${lato.variable} ${lato.className} antialiased h-dvh`}>
 				<NavBar />
 				{children}
 			</body>
