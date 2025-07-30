@@ -3,7 +3,7 @@ import FullScreenImageFader from "@/components/FullScreenImageFader";
 
 export default function Home() {
 	return (
-		<main className="relative h-[100dvh] min-h-screen">
+		<main className="relative h-full">
 			<FullScreenImageFader />
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
 			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center">

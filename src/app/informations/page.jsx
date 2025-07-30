@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function page() {
 	return (
-		<main className="flex max-lg:flex-col w-full h-[100dvh] min-h-screen">
+		<main className="flex max-lg:flex-col w-full h-full">
 			<section className="relative section-box-shadowr w-1/2 max-lg:w-full h-full">
 				<Image
 					src="/plat-ceviche-thon.jpg"
