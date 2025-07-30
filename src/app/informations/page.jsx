@@ -15,7 +15,7 @@ export default function page() {
 				/>
 			</section>
 			<section className="relative flex flex-col items-center bg-primary w-1/2 max-lg:w-full h-full overflow-scroll text-secondary cursor-default scrollbar-hide">
-				<div className="my-auto py-4">
+				<div className="my-auto py-4 animate-fade-in-left">
 					<h2 className="mb-10 max-lg:mb-4 w-full font-black max-lg:text-2xl text-4xl tracking-wide">
 						INFORMATIONS
 					</h2>
@@ -53,6 +53,7 @@ export default function page() {
 						href="https://www.facebook.com/profile.php?id=61578382830492"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="Facebook"
 						className="flex justify-center items-center hover:scale-110 transition duration-300"
 					>
 						<FaFacebookF className="w-9 h-9" />
@@ -61,6 +62,7 @@ export default function page() {
 						href="https://www.instagram.com/cafeduchateaupnc"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="Instagram"
 						className="flex justify-center items-center hover:scale-110 transition duration-300"
 					>
 						<FaInstagram className="w-10 h-10" />
