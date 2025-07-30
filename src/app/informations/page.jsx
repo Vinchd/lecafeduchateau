@@ -14,9 +14,9 @@ export default function page() {
 					className="object-cover"
 				/>
 			</section>
-			<section className="relative flex flex-col items-center bg-primary w-1/2 max-lg:w-full h-full overflow-scroll text-secondary scrollbar-hide">
+			<section className="relative flex flex-col items-center bg-primary w-1/2 max-lg:w-full h-full overflow-scroll text-secondary cursor-default scrollbar-hide">
 				<div className="my-auto py-4">
-					<h2 className="mb-10 max-lg:mb-5 w-full font-black max-lg:text-2xl text-4xl">
+					<h2 className="mb-10 max-lg:mb-4 w-full font-black max-lg:text-2xl text-4xl tracking-wide">
 						INFORMATIONS
 					</h2>
 					<div className="mb-8 max-lg:mb-4 w-full max-lg:text-xs">
@@ -32,13 +32,20 @@ export default function page() {
 						<div>Mardi au Samedi 9h00-00h00</div>
 						<div>Dimanche 9h00-19h00</div>
 					</div>
-					<div className="mb-8 max-lg:mb-4 w-full max-lg:text-xs">
+					<div className="group mb-8 max-lg:mb-4 w-full max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">TÉLÉPHONE</h3>
-						<div>01 23 45 67 89</div>
+						<a href="tel:+33240829171" className="group-hover:underline">
+							02 40 82 91 71
+						</a>
 					</div>
-					<div className="w-full max-lg:text-xs">
+					<div className="group w-full max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">ADRESSE E-MAIL</h3>
-						<div>lecafeduchateau44@gmail.com</div>
+						<a
+							href="mailto:lecafeduchateau44@gmail.com"
+							className="group-hover:underline"
+						>
+							lecafeduchateau44@gmail.com
+						</a>
 					</div>
 				</div>
 				<div className="right-15 max-lg:right-5 bottom-15 max-lg:bottom-5 fixed flex gap-1">
