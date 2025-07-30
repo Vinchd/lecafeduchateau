@@ -6,14 +6,19 @@ export default function Home() {
 		<main className="relative h-full">
 			<FullScreenImageFader />
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
-			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center">
+			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center animate-fade-in-up">
 				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider cursor-default">
 					Le Café du
 					<br />
 					Chateau
 				</h1>
 			</div>
-			<div className="bottom-0 z-30 absolute flex flex-col items-center gap-6 mb-8 w-full text-primary text-center">
+			<div
+				initial={{ opacity: 0, y: 40 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+				className="bottom-0 z-30 absolute flex flex-col items-center gap-6 mb-8 w-full text-primary text-center animate-fade-in-up-slow"
+			>
 				<a
 					href="https://maps.app.goo.gl/9B39j1e3WBVcqeet5"
 					target="_blank"
@@ -29,6 +34,7 @@ export default function Home() {
 						href="https://www.facebook.com/profile.php?id=61578382830492"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="Facebook"
 						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
 						<FaFacebookF className="w-9 h-9" />
@@ -37,6 +43,7 @@ export default function Home() {
 						href="https://www.instagram.com/cafeduchateaupnc"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="Instagram"
 						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
 						<FaInstagram className="w-10 h-10" />
