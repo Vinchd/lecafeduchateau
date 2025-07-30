@@ -23,7 +23,7 @@ export const metadata = {
 		locale: "fr_FR",
 		images: [
 			{
-				url: "/lecafeduchateau-logo.png",
+				url: "/lecafeduchateau-logo.jpg",
 				width: 1242,
 				height: 1755,
 				alt: "Logo Le Café du Château",
