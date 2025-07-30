@@ -82,14 +82,12 @@ export default function NavBar() {
 							</a>
 						</li>
 						<li>
-							<a
-								href="https://www.instagram.com/cafeduchateaupnc/p/DMQAJG3ymHU/"
-								target="_blank"
-								rel="noopener noreferrer"
+							<Link
+								href="dimanches-du-chateau"
 								onClick={() => setNavMenuIsOpen(false)}
 							>
 								Les dimanches du Château
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>

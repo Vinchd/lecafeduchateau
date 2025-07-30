@@ -6,7 +6,7 @@ export default function NotFound() {
 			<div>Page non trouvée</div>
 			<Link
 				href="/"
-				className="bg-gray-300 hover:bg-gray-400 px-12 py-4 rounded-3xl w-fit font-semibold text-secondary tracking-wider"
+				className="hover:bg-secondary px-12 py-4 border-3 rounded-3xl w-fit font-semibold text-secondary hover:text-primary tracking-wider"
 			>
 				Retour à l'accueil
 			</Link>
