@@ -19,26 +19,26 @@ export default function page() {
 					<h2 className="mb-10 max-lg:mb-4 w-full font-black max-lg:text-2xl text-4xl tracking-wide">
 						INFORMATIONS
 					</h2>
-					<div className="mb-8 max-lg:mb-4 w-full max-lg:text-xs">
+					<div className="mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						Pour les demandes de groupes, séminaire <br className="lg:hidden" />
 						et privatisation <br className="max-lg:hidden" />
 						merci de nous contacter <br className="lg:hidden" />
 						par mail.
 					</div>
-					<div className="mb-8 max-lg:mb-4 w-full max-lg:text-xs">
+					<div className="mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">
 							HORAIRES D'OUVERTURES
 						</h3>
 						<div>Mardi au Samedi 9h00-00h00</div>
 						<div>Dimanche 9h00-19h00</div>
 					</div>
-					<div className="group mb-8 max-lg:mb-4 w-full max-lg:text-xs">
+					<div className="group mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">TÉLÉPHONE</h3>
 						<a href="tel:+33240829171" className="group-hover:underline">
 							02 40 82 91 71
 						</a>
 					</div>
-					<div className="group w-full max-lg:text-xs">
+					<div className="group w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">ADRESSE E-MAIL</h3>
 						<a
 							href="mailto:lecafeduchateau44@gmail.com"
