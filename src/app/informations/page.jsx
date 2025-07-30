@@ -14,7 +14,7 @@ export default function page() {
 					className="object-cover"
 				/>
 			</section>
-			<section className="relative flex flex-col items-center bg-primary w-1/2 max-lg:w-full h-full overflow-scroll text-secondary">
+			<section className="relative flex flex-col items-center bg-primary w-1/2 max-lg:w-full h-full overflow-scroll text-secondary scrollbar-hide">
 				<div className="my-auto py-4">
 					<h2 className="mb-10 max-lg:mb-5 w-full font-black max-lg:text-2xl text-4xl">
 						INFORMATIONS
