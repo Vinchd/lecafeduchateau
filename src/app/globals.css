@@ -4,6 +4,9 @@
 	--color-primary: #f4f5ef;
 	--color-secondary: #1b4320;
 	--font-lato: var(--font-lato);
+	--font-sharpie: var(--font-sharpie);
+	--font-gambarino: var(--font-gambarino);
+	--font-gambetta: var(--font-gambetta);
 }
 
 /* ----- PAGE LOAD ANIMATION ----- */
