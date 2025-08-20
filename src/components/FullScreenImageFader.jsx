@@ -3,11 +3,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const images = [
-	"/plat-terrine.jpg",
 	"/plat-straciatella.jpg",
-	"/plat-ceviche-thon.jpg",
-	"/plat-poisson.jpg",
+	"/plat-plateau-de-fruitsmer.jpeg",
 	"/plat-onglet-boeuf.jpg",
+	"/plat-ceviche-thon.jpg",
+	"/plat-terrine.jpg",
+	"/plat-poisson.jpg",
 ];
 
 export default function FullScreenImageFader() {
