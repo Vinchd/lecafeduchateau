@@ -41,11 +41,13 @@ export default async function page() {
 									key={index}
 									className="flex flex-col items-center w-full leading-[1.15]"
 								>
-									<p className="font-semibold text-[17px] text-center">
+									<p className="font-semibold text-[17px] max-sm:text-[clamp(12px,3vw,16px)] text-center">
 										{item.nom} – {item.prix} €
 									</p>
 									{item.description && (
-										<p className="w-1/2 text-center">{item.description}</p>
+										<p className="w-1/2 max-sm:text-[clamp(11px,3vw,15px)] text-center">
+											{item.description}
+										</p>
 									)}
 								</li>
 							))}
