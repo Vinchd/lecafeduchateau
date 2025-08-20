@@ -77,14 +77,9 @@ export default function NavBar() {
 							</Link>
 						</li>
 						<li>
-							<a
-								href="https://www.instagram.com/stories/highlights/18281303998281206/"
-								target="_blank"
-								rel="noopener noreferrer"
-								onClick={() => setNavMenuIsOpen(false)}
-							>
+							<Link href="/menu" onClick={() => setNavMenuIsOpen(false)}>
 								Menu
-							</a>
+							</Link>
 						</li>
 						<li className={clsx({ active: isActive("/dimanches-du-chateau") })}>
 							<Link
