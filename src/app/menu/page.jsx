@@ -9,16 +9,20 @@ async function getMenu() {
 	const csv = await res.text();
 	const parsed = Papa.parse(csv, { header: true }).data;
 
-	const menu = parsed.reduce((acc, { Catégorie, Nom, Description, Prix }) => {
-		if (!Catégorie || !Nom) return acc;
-		if (!acc[Catégorie]) acc[Catégorie] = [];
-		acc[Catégorie].push({
-			nom: Nom,
-			description: Description,
-			prix: Prix?.replace(/,00$/, ""),
-		});
-		return acc;
-	}, {});
+	const menu = parsed.reduce(
+		(acc, { Id, Catégorie, Nom, Description, Prix }) => {
+			if (!Catégorie || !Nom) return acc;
+			if (!acc[Catégorie]) acc[Catégorie] = [];
+			acc[Catégorie].push({
+				id: Id,
+				nom: Nom,
+				description: Description,
+				prix: Prix?.replace(/,00$/, ""),
+			});
+			return acc;
+		},
+		{},
+	);
 
 	console.log(csv);
 
@@ -36,9 +40,9 @@ export default async function page() {
 					<div key={category} className="mb-6 font-gambetta uppercase">
 						<ul className="flex flex-col items-center gap-6">
 							{/* <ul className="space-y-6"> */}
-							{items.map((item, index) => (
+							{items.map((item) => (
 								<li
-									key={index}
+									key={item.id}
 									className="flex flex-col items-center w-full leading-[1.15]"
 								>
 									<p className="font-semibold text-[17px] max-sm:text-[clamp(12px,3vw,16px)] text-center">
