@@ -24,8 +24,6 @@ async function getMenu() {
 		{},
 	);
 
-	console.log(csv);
-
 	return menu;
 }
 
@@ -39,7 +37,6 @@ export default async function page() {
 				{Object.entries(menu).map(([category, items], idx, arr) => (
 					<div key={category} className="mb-6 font-gambetta uppercase">
 						<ul className="flex flex-col items-center gap-6">
-							{/* <ul className="space-y-6"> */}
 							{items.map((item) => (
 								<li
 									key={item.id}
