@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import FullScreenImageFader from "@/components/FullScreenImageFader";
 
@@ -7,11 +8,14 @@ export default function Home() {
 			<FullScreenImageFader />
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
 			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center animate-fade-in-up">
-				<h1 className="font-bold text-[clamp(2rem,5vw,3rem)] uppercase leading-snug tracking-wider cursor-default">
-					Le Café du
-					<br />
-					Chateau
-				</h1>
+				<div className="relative w-1/7 max-md:w-1/3 max-xl:w-1/5 h-full">
+					<Image
+						src="/logo.svg"
+						alt="Logo le Café du Château"
+						fill
+						className="object-contain"
+					/>
+				</div>
 			</div>
 			<div
 				initial={{ opacity: 0, y: 40 }}
@@ -20,7 +24,7 @@ export default function Home() {
 				className="bottom-0 z-30 absolute flex flex-col items-center gap-6 mb-8 w-full text-primary text-center animate-fade-in-up-slow"
 			>
 				<a
-					href="https://maps.app.goo.gl/9B39j1e3WBVcqeet5"
+					href="https://maps.app.goo.gl/XpSggq4R7tRGVo2TA?g_st=ipc"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-[clamp(1rem,5vw,1.3rem)] hover:text-secondary leading-7 hover:scale-104 transition duration-300"
