@@ -69,7 +69,7 @@
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
 }
-scrollbar-hide {
+.scrollbar-hide {
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 }
