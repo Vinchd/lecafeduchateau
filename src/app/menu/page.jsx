@@ -2,7 +2,7 @@ import Papa from "papaparse";
 
 async function getMenu() {
 	const res = await fetch(
-		"https://docs.google.com/spreadsheets/d/e/2PACX-1vTvm3qsaZofz-75x3aclsKsw5n6rGNbLTjcN6ZYqM6jrQG90IBbZ8r5H5Zt__m5AzK514XEfsx4fuAr/pub?output=csv",
+		process.env.GOOGLE_SHEET_URL,
 		// { next: { revalidate: 10 } }, // ⏱️ revalidation toutes les heures
 		{ cache: "no-store" },
 	);
