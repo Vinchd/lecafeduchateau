@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Papa from "papaparse";
 
 async function getMenu() {
@@ -47,7 +48,7 @@ export default async function page() {
 
 	return (
 		<main className="relative flex flex-col bg-primary pt-12 pb-12 h-full text-secondary">
-			<section className="flex-grow mx-auto max-w-3xl overflow-y-auto scrollbar-hide">
+			<section className="flex flex-col flex-grow items-center mx-auto max-w-3xl overflow-y-auto scrollbar-hide">
 				<div className="mb-24">
 					<h1 className="mb-10 font-sharpie text-5xl text-center">Menu</h1>
 					{Object.entries(menuPrincipal).map(([category, items], idx, arr) => (
@@ -76,7 +77,7 @@ export default async function page() {
 						</div>
 					))}
 				</div>
-				<div id="menu-du-dimanche">
+				<div id="menu-du-dimanche" className="mb-12">
 					<h2 className="mb-10 px-6 font-sharpie text-5xl text-center">
 						Les dimanches du Château
 					</h2>
@@ -105,6 +106,13 @@ export default async function page() {
 						</div>
 					))}
 				</div>
+				<Image
+					src="/logo-sirene.svg"
+					alt="Logo le Café du Château"
+					width={200}
+					height={300}
+					className="object-contain"
+				/>
 			</section>
 		</main>
 	);
