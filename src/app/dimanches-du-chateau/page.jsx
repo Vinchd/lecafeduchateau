@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function page() {
 	return (
 		<main className="flex max-lg:flex-col w-full h-full">
@@ -15,14 +16,12 @@ export default function page() {
 					</div>
 					<div className="w-full max-lg:text-xs">
 						Menu dimanche{" "}
-						<a
-							href="https://www.instagram.com/cafeduchateaupnc/p/DMulDNlItTg/"
-							target="_blank"
-							rel="noopener noreferrer"
+						<Link
+							href="/menu#menu-du-dimanche"
 							className="font-semibold hover:font-black underline underline-offset-1 hover:underline-offset-2 duration-300"
 						>
 							ici
-						</a>
+						</Link>
 					</div>
 				</div>
 			</section>

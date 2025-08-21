@@ -13,6 +13,7 @@ export default function Home() {
 						src="/logo.svg"
 						alt="Logo le Café du Château"
 						fill
+						priority
 						className="object-contain"
 					/>
 				</div>
