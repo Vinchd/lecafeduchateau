@@ -76,8 +76,8 @@ export default async function page() {
 						</div>
 					))}
 				</div>
-				<div>
-					<h2 className="mb-10 font-sharpie text-5xl text-center">
+				<div id="menu-du-dimanche">
+					<h2 className="mb-10 px-6 font-sharpie text-5xl text-center">
 						Les dimanches du Château
 					</h2>
 					{Object.entries(menuDimanche).map(([category, items], idx, arr) => (
