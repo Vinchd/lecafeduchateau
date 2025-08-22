@@ -107,12 +107,12 @@ export const metadata = {
 	openGraph: {
 		title: "Le Café du Château",
 		description:
-			"Brasserie française & fruits de mer. Cuisine locale. 100% maison. Les pieds dans l’eau.\nMar–Sam 9h–00h • Dim 9h–19h Réservations par téléphone.\nPlage du Château, Pornic, Pays De La Loire, France 44210",
+			"Brasserie française & fruits de mer. Cuisine locale. 100% maison. Les pieds dans l’eau.\nMar–Sam 9h–00h • Dim 9h–19h",
 		siteName: "Le Café du Château",
 		locale: "fr_FR",
 		images: [
 			{
-				url: "/lecafeduchateau-logo.jpg",
+				url: "/logo-opengraph.png",
 				width: 1242,
 				height: 1755,
 				alt: "Logo Le Café du Château",

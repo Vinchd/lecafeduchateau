@@ -6,8 +6,8 @@ export default function NotFound() {
 	return (
 		<div className="relative flex flex-col justify-center items-center gap-10 h-[100dvh] min-h-screen text-2xl">
 			<Image
-				src="/lecafeduchateau-logo.jpg"
-				alt="Plat Ceviche Thon"
+				src="/logo-sirene.svg"
+				alt="Logo le Café du Château"
 				sizes="(max-width: 500px) 100vw, (max-width: 800px) 100vw, (max-width: 1080px) 100vw, 100vw"
 				width={300}
 				height={424}
