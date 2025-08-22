@@ -76,7 +76,7 @@ export default function NavBar() {
 								Informations
 							</Link>
 						</li>
-						<li className={clsx({ active: isActive("/informations") })}>
+						<li className={clsx({ active: isActive("/menu") })}>
 							<Link href="/menu" onClick={() => setNavMenuIsOpen(false)}>
 								Menu
 							</Link>
