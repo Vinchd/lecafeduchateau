@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Papa from "papaparse";
 
 async function getMenu() {
@@ -47,72 +48,79 @@ export default async function page() {
 	const { menuPrincipal, menuDimanche } = await getMenu();
 
 	return (
-		<main className="relative flex flex-col bg-primary pt-12 pb-12 h-full text-secondary">
-			<section className="flex flex-col flex-grow items-center mx-auto max-w-3xl overflow-y-auto scrollbar-hide">
-				<div className="mb-24">
-					<h1 className="mb-10 font-sharpie text-5xl text-center">Menu</h1>
-					{Object.entries(menuPrincipal).map(([category, items], idx, arr) => (
-						<div key={category} className="mb-6 font-gambetta uppercase">
-							<ul className="flex flex-col items-center gap-6">
-								{items.map((item) => (
-									<li
-										key={item.id}
-										className="flex flex-col items-center w-full leading-[1.15]"
-									>
-										<p className="font-semibold text-[17px] max-sm:text-[clamp(12px,3vw,16px)] text-center">
-											{item.nom} – {item.prix} €
-										</p>
-										{item.description && (
-											<p className="w-1/2 max-sm:text-[clamp(11px,3vw,15px)] text-center">
-												{item.description}
-											</p>
-										)}
-									</li>
-								))}
+		<main className="relative flex flex-col bg-primary pt-20 max-sm:pt-18 pb-12 h-full text-secondary">
+			<section className="overflow-y-auto scrollbar-hide">
+				<div className="flex flex-col items-center mx-auto max-w-3xl">
+					<div className="mb-24">
+						<h1 className="mb-10 px-14 font-sharpie max-sm:text-[clamp(32px,6vw,38px)] text-5xl text-center">
+							Menu
+						</h1>
+						{Object.entries(menuPrincipal).map(
+							([category, items], idx, arr) => (
+								<div key={category} className="mb-6 font-gambetta uppercase">
+									<ul className="flex flex-col items-center gap-6">
+										{items.map((item) => (
+											<li
+												key={item.id}
+												className="flex flex-col items-center w-full leading-[1.15]"
+											>
+												<p className="font-semibold text-[17px] max-sm:text-[clamp(12px,3vw,16px)] text-center">
+													{item.nom} – {item.prix} €
+												</p>
+												{item.description && (
+													<p className="w-1/2 max-sm:text-[clamp(11px,3vw,15px)] text-center">
+														{item.description}
+													</p>
+												)}
+											</li>
+										))}
 
-								{idx < arr.length - 1 && (
-									<hr className="my-8 border-secondary border-t w-30" />
-								)}
-							</ul>
-						</div>
-					))}
-				</div>
-				<div id="menu-du-dimanche" className="mb-12">
-					<h2 className="mb-10 px-6 font-sharpie text-5xl text-center">
-						Les dimanches du Château
-					</h2>
-					{Object.entries(menuDimanche).map(([category, items], idx, arr) => (
-						<div key={category} className="mb-6 font-gambetta uppercase">
-							<ul className="flex flex-col items-center gap-6">
-								{items.map((item) => (
-									<li
-										key={item.id}
-										className="flex flex-col items-center w-full leading-[1.15]"
-									>
-										<p className="font-semibold text-[17px] max-sm:text-[clamp(12px,3vw,16px)] text-center">
-											{item.nom} – {item.prix} €
-										</p>
-										{item.description && (
-											<p className="w-1/2 max-sm:text-[clamp(11px,3vw,15px)] text-center">
-												{item.description}
-											</p>
+										{idx < arr.length - 1 && (
+											<hr className="my-8 border-secondary border-t w-30" />
 										)}
-									</li>
-								))}
-								{idx < arr.length - 1 && (
-									<hr className="my-8 border-secondary border-t w-30" />
-								)}
-							</ul>
-						</div>
-					))}
+									</ul>
+								</div>
+							),
+						)}
+					</div>
+					<div id="menu-du-dimanche" className="mb-12">
+						<h2 className="mb-10 px-14 font-sharpie max-sm:text-[clamp(32px,6vw,38px)] text-5xl text-center">
+							Les dimanches du Château
+						</h2>
+						{Object.entries(menuDimanche).map(([category, items], idx, arr) => (
+							<div key={category} className="mb-6 font-gambetta uppercase">
+								<ul className="flex flex-col items-center gap-6">
+									{items.map((item) => (
+										<li
+											key={item.id}
+											className="flex flex-col items-center w-full leading-[1.15]"
+										>
+											<p className="font-semibold text-[17px] max-sm:text-[clamp(12px,3vw,16px)] text-center">
+												{item.nom} – {item.prix} €
+											</p>
+											{item.description && (
+												<p className="w-1/2 max-sm:text-[clamp(11px,3vw,15px)] text-center">
+													{item.description}
+												</p>
+											)}
+										</li>
+									))}
+									{idx < arr.length - 1 && (
+										<hr className="my-8 border-secondary border-t w-30" />
+									)}
+								</ul>
+							</div>
+						))}
+					</div>
+					<Link href="/">
+						<Image
+							src="/logo-sirene.svg"
+							alt="Logo le Café du Château"
+							width={200}
+							height={300}
+						/>
+					</Link>
 				</div>
-				<Image
-					src="/logo-sirene.svg"
-					alt="Logo le Café du Château"
-					width={200}
-					height={300}
-					className="object-contain"
-				/>
 			</section>
 		</main>
 	);
