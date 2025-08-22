@@ -91,6 +91,9 @@ export default function NavBar() {
 						</li>
 					</ul>
 				</div>
+				<p className="right-0 bottom-0 absolute opacity-80 mr-6 font-light text-[8px] text-secondary delay-700">
+					&copy; 2025 Le Café du Château
+				</p>
 			</div>
 		</nav>
 	);
