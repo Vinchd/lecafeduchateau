@@ -18,7 +18,7 @@ export default function page() {
 						Menu dimanche{" "}
 						<Link
 							href="/menu#menu-du-dimanche"
-							className="font-semibold hover:font-black underline underline-offset-1 hover:underline-offset-2 duration-300"
+							className="inline-block font-semibold underline underline-offset-1 hover:underline-offset-2 hover:scale-104 transition duration-300"
 						>
 							ici
 						</Link>

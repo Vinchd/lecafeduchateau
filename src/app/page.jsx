@@ -28,7 +28,7 @@ export default function Home() {
 					href="https://maps.app.goo.gl/XpSggq4R7tRGVo2TA?g_st=ipc"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-[clamp(1rem,5vw,1.3rem)] hover:text-secondary leading-7 hover:scale-104 transition duration-300"
+					className="text-[clamp(1rem,5vw,1.3rem)] hover:text-secondary leading-7 hover:scale-103 transition duration-300"
 				>
 					Plage du Château
 					<br />
