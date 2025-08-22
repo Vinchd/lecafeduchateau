@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -134,6 +135,7 @@ export default function RootLayout({ children }) {
 				<NavBar />
 				{children}
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
