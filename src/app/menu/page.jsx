@@ -49,7 +49,7 @@ export default async function page() {
 
 	return (
 		<main className="relative flex flex-col bg-primary pt-20 max-sm:pt-18 pb-12 h-full text-secondary">
-			<section className="overflow-y-auto scrollbar-hide">
+			<section className="overflow-y-auto cursor-default scrollbar-hide">
 				<div className="flex flex-col items-center mx-auto max-w-3xl">
 					<div className="mb-24">
 						<h1 className="mb-10 px-14 font-sharpie max-sm:text-[clamp(32px,6vw,38px)] text-5xl text-center">
