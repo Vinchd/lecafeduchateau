@@ -29,8 +29,8 @@ export default function page() {
 						<h3 className="font-bold max-lg:text-sm text-lg">
 							HORAIRES D'OUVERTURES
 						</h3>
-						<div>Mardi au Samedi 9h00-00h00</div>
-						<div>Dimanche 9h00-19h00</div>
+						<div>Mercredi au Dimanche 9h00-00h00</div>
+						<div>Lundi Mardi fermé</div>
 					</div>
 					<div className="group mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">TÉLÉPHONE</h3>
