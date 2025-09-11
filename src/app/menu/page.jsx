@@ -3,6 +3,29 @@ import Link from "next/link";
 import Papa from "papaparse";
 import { config } from "@/lib/config";
 
+export const metadata = {
+	title: "Menu - Le Café du Château",
+	description:
+		"Découvrez le menu du Café du Château : Cuisine locale, 100% maison.",
+	openGraph: {
+		title: "Menu - Le Café du Château",
+		description:
+			"Parcourez le menu du Café du Château : Cuisine locale, 100% maison.",
+		url: "https://www.lecafeduchateau.fr/menu",
+		siteName: "Le Café du Château",
+		images: [
+			{
+				url: "/logo-opengraph.png",
+				width: 1242,
+				height: 1755,
+				alt: "Logo Le Café du Château",
+			},
+		],
+		locale: "fr_FR",
+		type: "website",
+	},
+};
+
 async function getMenu() {
 	const res = await fetch(process.env.GOOGLE_SHEET_URL, {
 		next: { revalidate: 10 },
