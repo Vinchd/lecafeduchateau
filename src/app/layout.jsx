@@ -91,13 +91,6 @@ const gambetta = localFont({
 	subsets: ["latin"],
 });
 
-const gambarino = localFont({
-	variable: "--font-gambarino",
-	src: "./fonts/gambarino/Gambarino-Regular.woff2",
-	weight: "400",
-	subsets: ["latin"],
-});
-
 export const metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
 	title: "Le Café du Château",
@@ -147,7 +140,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="fr" className="h-dvh">
 			<body
-				className={`${lato.variable} ${lato.className} ${sharpie.variable} ${gambarino.variable} ${gambetta.variable} antialiased h-dvh`}
+				className={`${lato.variable} ${lato.className} ${sharpie.variable} ${gambetta.variable} antialiased h-dvh`}
 			>
 				<NavBar />
 				{children}
