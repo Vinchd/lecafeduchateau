@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { config } from "@/lib/config";
 
 export default function NavBar() {
 	const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
@@ -81,14 +82,18 @@ export default function NavBar() {
 								Menu
 							</Link>
 						</li>
-						<li className={clsx({ active: isActive("/dimanches-du-chateau") })}>
-							<Link
-								href="dimanches-du-chateau"
-								onClick={() => setNavMenuIsOpen(false)}
+						{config.showDimancheMenu && (
+							<li
+								className={clsx({ active: isActive("/dimanches-du-chateau") })}
 							>
-								Les dimanches du Château
-							</Link>
-						</li>
+								<Link
+									href="dimanches-du-chateau"
+									onClick={() => setNavMenuIsOpen(false)}
+								>
+									Les dimanches du Château
+								</Link>
+							</li>
+						)}
 					</ul>
 				</div>
 				<p className="right-0 bottom-0 absolute opacity-80 mr-6 font-light text-[8px] text-secondary delay-700">
