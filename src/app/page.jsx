@@ -3,6 +3,31 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import FullScreenImageFader from "@/components/FullScreenImageFader";
 
 export default function Home() {
+	const jsonLD = {
+		"@context": "https://schema.org",
+		"@type": "Restaurant",
+		name: "Le Café du Château",
+		image: "https://www.lecafeduchateau.fr/logo-sirene.svg",
+		"@id": "https://www.lecafeduchateau.fr",
+		url: "https://www.lecafeduchateau.fr",
+		telephone: "+33 2 40 82 91 71",
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "Plage du Château",
+			addressLocality: "Pornic",
+			postalCode: "44210",
+			addressCountry: "FR",
+		},
+		geo: {
+			"@type": "GeoCoordinates",
+			latitude: 47.11379,
+			longitude: -2.10667,
+		},
+		servesCuisine: ["Française", "Traditionnelle"],
+		priceRange: "€€",
+		openingHours: ["We-Su 09:00-00:00"],
+	};
+
 	return (
 		<main className="relative h-full overflow-hidden">
 			<FullScreenImageFader />
@@ -55,6 +80,10 @@ export default function Home() {
 					</a>
 				</div>
 			</div>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
+			/>
 		</main>
 	);
 }
