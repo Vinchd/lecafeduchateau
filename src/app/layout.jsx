@@ -91,26 +91,28 @@ const gambetta = localFont({
 	subsets: ["latin"],
 });
 
-const gambarino = localFont({
-	variable: "--font-gambarino",
-	src: "./fonts/gambarino/Gambarino-Regular.woff2",
-	weight: "400",
-	subsets: ["latin"],
-});
-
 export const metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
 	title: "Le Café du Château",
 	description:
-		"Brasserie française & fruits de mer. Cuisine locale. 100% maison. Les pieds dans l’eau.\nMar–Sam 9h–00h • Dim 9h–19h Réservations par téléphone.\nPlage du Château, Pornic, Pays De La Loire, France 44210",
+		"Brasserie française & fruits de mer. Cuisine locale, 100% maison. Les pieds dans l’eau.\nRéservations par téléphone. Plage du Château, 44210 Pornic, Pays De La Loire, France",
+	keywords: [
+		"restaurant",
+		"café",
+		"pornic",
+		"chateau",
+		"cuisine locale",
+		"fait maison",
+		"restau",
+	],
 	creator: "Vincent Daviaud",
 	publisher: "Vincent Daviaud",
 	openGraph: {
 		title: "Le Café du Château",
 		description:
-			"Brasserie française & fruits de mer. Cuisine locale. 100% maison. Les pieds dans l’eau.\nMar–Sam 9h–00h • Dim 9h–19h",
+			"Brasserie française & fruits de mer. Cuisine locale, 100% maison. Les pieds dans l’eau.\nRéservations par téléphone.",
+		url: new URL(process.env.NEXT_PUBLIC_SITE_URL),
 		siteName: "Le Café du Château",
-		locale: "fr_FR",
 		images: [
 			{
 				url: "/logo-opengraph.png",
@@ -119,6 +121,14 @@ export const metadata = {
 				alt: "Logo Le Café du Château",
 			},
 		],
+		locale: "fr_FR",
+		type: "website",
+		twitter: {
+			card: "summary_large_image",
+			title: "Le Café du Château",
+			description: "Restaurant, brasserie et fruits de mer à Pornic.",
+			images: ["/logo-opengraph.png"],
+		},
 	},
 	robots: {
 		index: true,
@@ -130,7 +140,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="fr" className="h-dvh">
 			<body
-				className={`${lato.variable} ${lato.className} ${sharpie.variable} ${gambarino.variable} ${gambetta.variable} antialiased h-dvh`}
+				className={`${lato.variable} ${lato.className} ${sharpie.variable} ${gambetta.variable} antialiased h-dvh`}
 			>
 				<NavBar />
 				{children}
