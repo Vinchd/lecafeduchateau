@@ -76,6 +76,13 @@ export default async function page() {
 		"@type": "Restaurant",
 		name: "Le Café du Château",
 		url: "https://www.lecafeduchateau.fr/menu",
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "Plage du Château",
+			addressLocality: "Pornic",
+			postalCode: "44210",
+			addressCountry: "FR",
+		},
 		hasMenu: {
 			"@type": "Menu",
 			name: "Menu principal",
