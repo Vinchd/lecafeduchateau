@@ -47,13 +47,13 @@ export default function Home() {
 				initial={{ opacity: 0, y: 40 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-				className="bottom-0 z-30 absolute flex flex-col items-center gap-6 mb-8 w-full text-primary text-center animate-fade-in-up-slow"
+				className="bottom-0 z-30 absolute flex flex-col items-center gap-4 mb-8 w-full text-primary text-center animate-fade-in-up-slow"
 			>
 				<a
 					href="https://maps.app.goo.gl/XpSggq4R7tRGVo2TA?g_st=ipc"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-[clamp(1rem,5vw,1.2rem)] hover:text-secondary leading-7 hover:scale-103 transition duration-300"
+					className="hover:font-bold hover:text-secondary leading-7 hover:scale-103 transition duration-300"
 				>
 					Plage du Château
 					<br />
@@ -67,7 +67,7 @@ export default function Home() {
 						aria-label="Facebook"
 						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
-						<FaFacebookF className="w-8 h-8" />
+						<FaFacebookF className="w-7 h-7" />
 					</a>
 					<a
 						href="https://www.instagram.com/cafeduchateaupnc"
@@ -76,7 +76,7 @@ export default function Home() {
 						aria-label="Instagram"
 						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
-						<FaInstagram className="w-9 h-9" />
+						<FaInstagram className="w-8 h-8" />
 					</a>
 				</div>
 			</div>
