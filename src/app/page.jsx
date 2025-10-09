@@ -33,7 +33,7 @@ export default function Home() {
 			<FullScreenImageFader />
 			<div className="z-20 absolute inset-0 bg-black/30 pointer-events-none" />
 			<div className="z-30 absolute inset-0 flex flex-col justify-center items-center text-primary text-center animate-fade-in-up">
-				<div className="relative w-1/7 max-md:w-1/3 max-xl:w-1/5 h-full">
+				<div className="relative w-1/5 max-md:w-1/2 max-xl:w-1/3 h-full">
 					<Image
 						src="/logo.svg"
 						alt="Logo le Café du Château"
@@ -53,7 +53,7 @@ export default function Home() {
 					href="https://maps.app.goo.gl/XpSggq4R7tRGVo2TA?g_st=ipc"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-[clamp(1rem,5vw,1.3rem)] hover:text-secondary leading-7 hover:scale-103 transition duration-300"
+					className="text-[clamp(1rem,5vw,1.2rem)] hover:text-secondary leading-7 hover:scale-103 transition duration-300"
 				>
 					Plage du Château
 					<br />
@@ -67,7 +67,7 @@ export default function Home() {
 						aria-label="Facebook"
 						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
-						<FaFacebookF className="w-9 h-9" />
+						<FaFacebookF className="w-8 h-8" />
 					</a>
 					<a
 						href="https://www.instagram.com/cafeduchateaupnc"
@@ -76,7 +76,7 @@ export default function Home() {
 						aria-label="Instagram"
 						className="flex justify-center items-center hover:text-secondary hover:scale-110 transition duration-300"
 					>
-						<FaInstagram className="w-10 h-10" />
+						<FaInstagram className="w-9 h-9" />
 					</a>
 				</div>
 			</div>
