@@ -27,6 +27,26 @@ export default function NavBar() {
 	const isActive = (path) => pathname === path;
 	const whiteBurger = pathname === "/" || pathname === "/informations";
 
+	const CustomLink = ({ href, children }) => {
+		const handleClick = () => {
+			setNavMenuIsOpen(false);
+		};
+
+		if (pathname === "/reservation") {
+			return (
+				<a href={href} onClick={handleClick}>
+					{children}
+				</a>
+			);
+		}
+
+		return (
+			<Link href={href} onClick={handleClick}>
+				{children}
+			</Link>
+		);
+	};
+
 	return (
 		<nav className="nav">
 			<div className="navBar">
@@ -65,37 +85,35 @@ export default function NavBar() {
 				<div className="navMenuContainer">
 					<ul>
 						<li className={clsx({ active: isActive("/") })}>
-							<Link href="/" onClick={() => setNavMenuIsOpen(false)}>
-								Accueil
-							</Link>
+							<CustomLink href="/">Accueil</CustomLink>
 						</li>
+
 						<li className={clsx({ active: isActive("/informations") })}>
-							<Link
-								href="/informations"
-								onClick={() => setNavMenuIsOpen(false)}
-							>
-								Informations
-							</Link>
+							<CustomLink href="/informations">Informations</CustomLink>
 						</li>
+
 						<li className={clsx({ active: isActive("/menu") })}>
-							<Link href="/menu" onClick={() => setNavMenuIsOpen(false)}>
-								Menu
-							</Link>
+							<CustomLink href="/menu">Menu</CustomLink>
 						</li>
+
+						<li className={clsx({ active: isActive("/reservation") })}>
+							<CustomLink href="/reservation">Réservation</CustomLink>
+						</li>
+
 						{config.showDimancheMenu && (
 							<li
-								className={clsx({ active: isActive("/dimanches-du-chateau") })}
+								className={clsx({
+									active: isActive("/dimanches-du-chateau"),
+								})}
 							>
-								<Link
-									href="dimanches-du-chateau"
-									onClick={() => setNavMenuIsOpen(false)}
-								>
+								<CustomLink href="/dimanches-du-chateau">
 									Les dimanches du Château
-								</Link>
+								</CustomLink>
 							</li>
 						)}
 					</ul>
 				</div>
+
 				<p className="right-0 bottom-0 absolute opacity-80 mr-6 font-light text-[8px] text-secondary delay-700">
 					&copy; 2025 Le Café du Château
 				</p>

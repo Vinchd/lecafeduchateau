@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function page() {
 	return (
 		<main className="flex max-lg:flex-col w-full h-full">
-			<section className="relative section-box-shadowr w-1/2 max-lg:w-full h-full">
+			<section className="relative w-1/2 max-lg:w-full h-full section-box-shadowr">
 				<Image
 					src="/plat-ceviche-thon.jpg"
 					alt="Plat Ceviche Thon"
@@ -20,17 +21,25 @@ export default function page() {
 						INFORMATIONS
 					</h2>
 					<div className="mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
+						Vous pouvez réserver en ligne{" "}
+						<Link
+							href="/reservation"
+							className="hover:text-secondary/80 underline"
+						>
+							ici
+						</Link>
+						.<br />
 						Pour les demandes de groupes, séminaire <br className="lg:hidden" />
 						et privatisation <br className="max-lg:hidden" />
 						merci de nous contacter <br className="lg:hidden" />
 						par mail.
 					</div>
 					<div className="mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
-						<h3 className="font-bold max-lg:text-sm text-lg">
+						<h3 className="mb-1 font-bold max-lg:text-sm text-lg">
 							HORAIRES D'OUVERTURES
 						</h3>
-						<div>Mercredi au Dimanche 9h00-00h00</div>
-						<div>Lundi Mardi fermé</div>
+						<div>Dimanche, Lundi, Mardi 9h00-17h30</div>
+						<div>Mercredi, Jeudi, Vendredi, Samedi 9h00-2h00</div>
 					</div>
 					<div className="group mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">TÉLÉPHONE</h3>
