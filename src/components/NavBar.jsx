@@ -25,7 +25,10 @@ export default function NavBar() {
 	}, [navMenuIsOpen]);
 
 	const isActive = (path) => pathname === path;
-	const whiteBurger = pathname === "/" || pathname === "/informations";
+	const whiteBurger =
+		pathname === "/" ||
+		pathname === "/informations" ||
+		pathname === "/reservation";
 
 	const CustomLink = ({ href, children }) => {
 		const handleClick = () => {
