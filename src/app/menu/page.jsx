@@ -102,11 +102,14 @@ export default async function page() {
 			<section className="overflow-y-auto cursor-default scrollbar-hide">
 				<div className="flex flex-col items-center mx-auto max-w-3xl">
 					<div className="mb-24">
-						<h1 className="mb-10 px-14 font-sharpie max-sm:text-[clamp(32px,6vw,38px)] text-5xl text-center">
+						<h1 className="mb-12 ml-2 px-14 font-sharpie max-sm:text-[clamp(32px,8vw,42px)] text-6xl text-center tracking-wide">
 							Menu
 						</h1>
 						{Object.entries(menu).map(([category, items], idx, arr) => (
 							<div key={category} className="mb-6 font-gambetta uppercase">
+								<h2 className="mb-4 font-sharpie font-bold max-sm:text-[clamp(18px,4vw,22px)] text-2xl text-center">
+									{category}
+								</h2>
 								<ul className="flex flex-col items-center gap-6">
 									{items.map((item) => (
 										<li
@@ -125,7 +128,7 @@ export default async function page() {
 									))}
 
 									{idx < arr.length - 1 && (
-										<hr className="my-8 border-secondary border-t w-30" />
+										<hr className="mt-8 mb-2 border-secondary border-t w-30" />
 									)}
 								</ul>
 							</div>
