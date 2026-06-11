@@ -2,7 +2,56 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
-export default function page() {
+async function fetchHoraires() {
+	try {
+		const res = await fetch(process.env.GOOGLE_SHEET_SCHEDULES_URL, {
+			next: { revalidate: 600 },
+		});
+		const text = await res.text();
+		const lines = text.trim().split("\n").slice(1);
+
+		return lines.map((line) => {
+			const [jour, ouverture, fermeture, ferme] = line.split(",");
+			return {
+				jour: jour?.trim() ?? "",
+				ouverture: ouverture?.trim() ?? "",
+				fermeture: fermeture?.trim() ?? "",
+				ferme: ferme?.trim() ?? "",
+			};
+		});
+	} catch {
+		return [];
+	}
+}
+
+function formatPlage(ouverture, fermeture) {
+	if (!ouverture || !fermeture) return null;
+	const fmt = (h) => h.split(":").slice(0, 2).join("h");
+	return `${fmt(ouverture)} – ${fmt(fermeture)}`;
+}
+
+function grouperHoraires(horaires) {
+	const map = new Map();
+
+	for (const h of horaires) {
+		const ferme = h.ferme?.toUpperCase() === "TRUE";
+		const plage = ferme
+			? "Fermé"
+			: (formatPlage(h.ouverture, h.fermeture) ?? "Fermé");
+
+		if (!map.has(plage)) {
+			map.set(plage, []);
+		}
+		map.get(plage).push(h.jour);
+	}
+
+	return Array.from(map.entries()).map(([plage, jours]) => ({ plage, jours }));
+}
+
+export default async function page() {
+	const horaires = await fetchHoraires();
+	const groupes = grouperHoraires(horaires);
+
 	return (
 		<main className="flex max-lg:flex-col w-full h-full">
 			<section className="relative w-1/2 max-lg:w-full h-full section-box-shadowr">
@@ -36,10 +85,25 @@ export default function page() {
 					</div>
 					<div className="mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="mb-1 font-bold max-lg:text-sm text-lg">
-							HORAIRES D'OUVERTURES
+							HORAIRES D&apos;OUVERTURES
 						</h3>
-						<div>Dimanche, Lundi, Mardi 9h00-17h30</div>
-						<div>Mercredi, Jeudi, Vendredi, Samedi 9h00-2h00</div>
+						{groupes.length > 0 ? (
+							groupes.map((groupe) => (
+								<div key={groupe.jours.join(",")}>
+									<span>{groupe.jours.join(", ")}</span>
+									{groupe.plage === "Fermé" ? (
+										<span> – Fermé</span>
+									) : (
+										<span> {groupe.plage}</span>
+									)}
+								</div>
+							))
+						) : (
+							<>
+								<div>Dimanche, Lundi, Mardi 09h00 - 00h00</div>
+								<div>Mercredi, Jeudi, Vendredi, Samedi 09h00 - 02h00</div>
+							</>
+						)}
 					</div>
 					<div className="group mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
 						<h3 className="font-bold max-lg:text-sm text-lg">TÉLÉPHONE</h3>

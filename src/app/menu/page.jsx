@@ -28,7 +28,7 @@ export const metadata = {
 const CATEGORIES = ["Entrée", "Écailler", "Plat", "Dessert"];
 
 async function getMenu() {
-	const res = await fetch(process.env.GOOGLE_SHEET_URL, {
+	const res = await fetch(process.env.GOOGLE_SHEET_MENU_URL, {
 		next: { revalidate: 600 },
 	});
 	const csv = await res.text();
