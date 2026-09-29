@@ -1,28 +1,8 @@
-"use client";
 import Image from "next/image";
-import { useEffect } from "react";
+import Horaires from "@/components/Horaires";
+import ReservationButton from "@/components/ReservationButton";
 
 export default function ReservationPage() {
-	useEffect(() => {
-		const script = document.createElement("script");
-
-		script.src = "https://widget.letsumai.com/dist/embed.min.js";
-		script.async = true;
-
-		document.body.appendChild(script);
-	}, []);
-
-	const openReservationWidget = () => {
-		if (window.umaiWidget) {
-			window.umaiWidget.config({
-				apiKey: process.env.NEXT_PUBLIC_UMAI_API_KEY,
-				widgetType: "reservation",
-			});
-
-			window.umaiWidget.openWidget();
-		}
-	};
-
 	return (
 		<main className="flex max-lg:flex-col w-full h-full">
 			<section className="relative w-1/2 max-lg:w-full h-full section-box-shadowr">
@@ -50,22 +30,9 @@ export default function ReservationPage() {
 						merci de nous contacter par mail.
 					</p>
 
-					<div className="mb-8 max-lg:mb-4 w-full text-[clamp(14px,1.4vw,16px)] max-lg:text-xs">
-						<h3 className="mb-1 font-bold max-lg:text-sm text-lg">
-							HORAIRES D'OUVERTURES
-						</h3>
-						<p>Dimanche, Lundi, Mardi 9h00-17h30</p>
-						<p>Mercredi, Jeudi, Vendredi, Samedi 9h00-2h00</p>
-					</div>
+					<Horaires />
 
-					<button
-						id="umai-reservation-button"
-						type="button"
-						onClick={openReservationWidget}
-						className="self-center bg-secondary hover:bg-secondary/90 px-10 max-lg:px-8 py-4 max-lg:py-3 font-sharpie font-black text-primary max-lg:text-lg text-xl tracking-widest active:scale-95 transition-all duration-200 cursor-pointer"
-					>
-						RÉSERVER UNE TABLE
-					</button>
+					<ReservationButton />
 
 					<p className="opacity-60 mt-8 max-lg:mt-3 text-[clamp(12px,1.1vw,14px)] max-lg:text-[10px]">
 						Vous pouvez également nous joindre au{" "}
