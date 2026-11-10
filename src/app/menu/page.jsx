@@ -29,7 +29,7 @@ const CATEGORIES = ["Entrée", "Écailler", "Plat", "Dessert"];
 
 async function getMenu() {
 	const res = await fetch(process.env.GOOGLE_SHEET_MENU_URL, {
-		next: { revalidate: 600 },
+		next: { revalidate: 3600 },
 	});
 	const csv = await res.text();
 	const parsed = Papa.parse(csv, { header: true }).data;
@@ -53,7 +53,6 @@ async function getMenu() {
 		{},
 	);
 
-	// Retourner les catégories dans l'ordre défini
 	const menuOrdered = {};
 	for (const cat of CATEGORIES) {
 		if (menu[cat]) menuOrdered[cat] = menu[cat];

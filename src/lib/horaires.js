@@ -1,7 +1,7 @@
 export async function fetchHoraires() {
 	try {
 		const res = await fetch(process.env.GOOGLE_SHEET_SCHEDULES_URL, {
-			next: { revalidate: 600 },
+			next: { revalidate: 3600 },
 		});
 		const text = await res.text();
 		const lines = text.trim().split("\n").slice(1);
